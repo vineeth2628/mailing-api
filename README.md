@@ -10,4 +10,4 @@ A simple API to send mails. Created using nodejs and google OAuth 2.0
 
 ## Dev-Dependencies:
 * nodemon
-* Rest Client (for sending requests)
+* Rest Client (for sending HTTP requests)
