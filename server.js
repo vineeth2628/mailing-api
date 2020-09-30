@@ -31,7 +31,7 @@ oauth2Client.setCredentials({
 
 const accessToken = oauth2Client.getAccessToken(); //to get access token
 
-
+//middleware to create a transport for sending mails
 const transport = nodemailer.createTransport({
     service: "gmail",
     auth: {
