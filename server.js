@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+//get request
 app.get('/',(req,res)=>{
     res.send('Default GET Request message')
 });
@@ -43,14 +44,14 @@ const transport = nodemailer.createTransport({
     }
 });
 
-
+//post request
 app.post('/sendmail', (req,res)=>{
     const mailTemplate = {
-        from: process.env.USER_EMAIL,
-        to: req.body.toAddress,
-        subject: req.body.subject,
+        from: process.env.USER_EMAIL, //sender email address 
+        to: req.body.toAddress, // receiver email addresses
+        subject: req.body.subject, //subject of the email
         generateTextFromHTML: true,
-        html: req.body.html
+        html: req.body.html //content of the email
     };
     transport.sendMail(mailTemplate, (err, res) => {
         if(err){
